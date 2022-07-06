@@ -39,6 +39,10 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "proj_expense.apps.ProjExpenseConfig",
     "crispy_forms",
+    "supplies_code_maintenance.apps.SuppliesCodeMaintenanceConfig",
+    'equipment_code_maintenance.apps.EquipmentCodeMaintenanceConfig',
+    'project_maintenance.apps.ProjectMaintenanceConfig',
+    'SubContractor.apps.SubcontractorConfig',
 ]
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
