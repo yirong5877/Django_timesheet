@@ -1,2 +1,4 @@
-DJtimesheet\DJtimesheet\settings.py
-Django_timesheet\env
+
+.idea/workspace.xml
+Django_timesheet/env/
+DJtimesheet/DJtimesheet/settings.py
