@@ -1,0 +1,24 @@
+{% extends 'DJtimesheet/base.html' %}
+
+{% block Title %}
+    <title>Equipment Code Maintenance</title>
+{% endblock Title %}
+
+
+{% load crispy_forms_tags %}
+{% block content %}
+    <div>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="container-fluid">
+            <fieldset class="form-group">
+                <legend class="Text">Equipment Code Maintenance</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                    <button class="btn btn-outline-info" type="submit">Create/Update</button>
+            </div>
+            </div>
+        </form>
+    </div>
+{% endblock content %}

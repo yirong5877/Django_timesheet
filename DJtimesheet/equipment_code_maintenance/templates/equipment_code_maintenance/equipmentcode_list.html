@@ -1,0 +1,31 @@
+{% extends 'DJtimesheet/base.html' %}
+
+{% block Title %}
+<title>Equipment Codes Class We Have - Default List View</title>
+{% endblock Title %}
+
+{% block content %}
+
+<form method="post">
+  {% csrf_token %}
+  <br>
+    {% for code in object_list %}
+    <div></div>
+        <H2>{{ code.equipment_code_class }}</H2>
+        {%if code.active == 'Y'%}
+        {{ code.equipment_code_class }} is active
+        {%elif code.delivery_mode == 'N' %}
+        {{ code.equipment_code_class }} is inactive
+        {% endif %}
+    {% endfor%}
+
+</form>
+
+{% endblock content %}
+
+
+
+
+
+
+
