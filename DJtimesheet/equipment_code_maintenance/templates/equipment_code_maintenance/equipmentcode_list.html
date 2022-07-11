@@ -15,7 +15,7 @@
         {%if code.active == 'Y'%}
         {{ code.equipment_code_class }} is active
         {%elif code.delivery_mode == 'N' %}
-        {{ code.equipment_code_class }} is inactive
+        {{ code.equipment_code_class }} is deactivated
         {% endif %}
     {% endfor%}
 

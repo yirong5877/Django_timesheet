@@ -9,6 +9,7 @@ from .models import EquipmentCode
 
 class ShowAllEquipmentCode(View):
     template_name = 'equipment_code_maintenance/show_all_equipment_codes.html'
+    context_object_name = 'all_EquipmentCode'
 
     def get(self, request, *args, **kwargs):
         all_equipment_codes = EquipmentCode.dj_equipment_code.all()
@@ -25,6 +26,7 @@ class EquipmentCodeCreateView(CreateView):
     model = EquipmentCode
     fields = ['equipment_code_class', 'billing_code', 'hourly_rate', 'active']
     success_url = reverse_lazy('show_all_equipment_codes')
+    template_name = 'equipment_code_maintenance/create_equipment_code.html'
 
     def form_valid(self, form):
         if form.instance.hourly_rate < 16 or form.instance.hourly_rate > 120:
@@ -37,6 +39,7 @@ class EquipmentCodeUpdateView(UpdateView):
     model = EquipmentCode
     fields = ['equipment_code_class', 'billing_code', 'hourly_rate', 'active']
     success_url = reverse_lazy('show_all_equipment_codes')
+    template_name = 'equipment_code_maintenance/update_equipment_code.html'
 
     def form_valid(self, form):
         print("Self.object = ", self.object.equipment_code_class, self.object.billing_code,

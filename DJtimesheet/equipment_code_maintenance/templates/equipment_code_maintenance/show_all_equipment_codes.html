@@ -1,7 +1,7 @@
 {% extends 'DJtimesheet/base.html' %}
 
 {% block Title %}
-<title>Equipment Codes Class We Have </title>
+<title>Equipment Codes Class We Have</title>
 {% endblock Title %}
 
 {% block content %}
@@ -9,16 +9,16 @@
 <form method="post">
   {% csrf_token %}
   <br>
-    {% for code in object_list %}
-    <div></div>
+    {% for code in all_EquipmentCode %}
+    <div>
         <H2>{{ code.equipment_code_class }}</H2>
         {%if code.active == 'Y'%}
-        {{ code.equipment_code_class }} is active
+        Active
         {%elif code.delivery_mode == 'N' %}
-        {{ code.equipment_code_class }} is inactive
+        Inactive
         {% endif %}
     {% endfor%}
-
+    </div>
 </form>
 
 {% endblock content %}

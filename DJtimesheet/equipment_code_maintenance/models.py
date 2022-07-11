@@ -9,9 +9,9 @@ from django.db import models
     # d. Active(Default will be true)
 
 class EquipmentCode(models.Model):
-    # class Meta:
-        # db_table = 'Equipment Code Maintenance'
-        # verbose_name_plural = "Equipment Codes"
+    class Meta:
+        db_table = 'equipment_code_maintenance_equipmentcode'
+        verbose_name_plural = "Equipment Codes"
 
     ACTIVE_STATUS = [('Y', 'Active'),
                      ('N', 'Inactive'),
@@ -21,6 +21,7 @@ class EquipmentCode(models.Model):
     # hourly_rate = models.DecimalField(max_digits=5, decimal_places=2, default='$16/Hr')
     hourly_rate = models.IntegerField(default='$16/Hr')
     active = models.CharField(max_length=1, choices=ACTIVE_STATUS, default='Y')
+    # lastupdatedby = models.ForeignKey(UserID, on_delete=models.PROTECT)
     date_added = models.DateField(verbose_name='date added', auto_now_add=True)
     date_updated = models.DateField(auto_now=True)
     date_active = models.DateField(null=True)
