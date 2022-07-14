@@ -1,0 +1,65 @@
+{% load static%}
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+
+    <!-- Side bar CSS -->
+    <link rel="stylesheet" type='text/css' href="{% static 'css/side_bar.css' %}">
+      <!-- Bootstrap CSS -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+       <!--  Bootstrap Font Aweson cdn -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!-- Boxiocns CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+<!-- Sidebar section -->
+<div class="sidebar close">
+ {% include 'DJtimesheet/side_navigation_bar.html' %} 
+</div>
+<!-- Home-section -->
+  <section class="home-section">
+<!-- Page title in Home-section -->
+    <div class="home-content">
+      <i class='bx bx-menu' ></i>
+      <span class="pagetitle">
+      {% block title %} 
+   
+      {% endblock title%}
+      </span>
+
+    </div>
+
+<!--  Blocks in Home-section -->   
+        <div class="container">
+                    <!--  Blocks for popup window in Home-section -->
+                              {% block popup %} 
+                      
+                              {% endblock popup%}
+                    <!--  Blocks for content in Home-section -->
+                              {% block content %} 
+
+                              {% endblock content%}
+          </div>
+</section>
+
+  <script>
+  let arrow = document.querySelectorAll(".arrow");
+  for (var i = 0; i < arrow.length; i++) {
+    arrow[i].addEventListener("click", (e)=>{
+   let arrowParent = e.target.parentElement.parentElement;//selecting main parent of arrow
+   arrowParent.classList.toggle("showMenu");
+    });
+  }
+  let sidebar = document.querySelector(".sidebar");
+  let sidebarBtn = document.querySelector(".bx-menu");
+  console.log(sidebarBtn);
+  sidebarBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("close");
+  });
+  </script>
+</body>
+</html>

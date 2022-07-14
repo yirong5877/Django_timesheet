@@ -1,27 +1,38 @@
-from ftplib import all_errors
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.views import View
-from django.views.generic import ListView
-from django.views.generic import CreateView
-from django.urls import reverse_lazy
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib import messages
-from django.http import HttpResponse, HttpResponseRedirect
-from django.urls import reverse
-from django.contrib.auth.forms import UserCreationForm
-
+from .forms import create_projexp_form
+from .models import *
 # Create your views here.
-from django.shortcuts import render
-from datetime import date
-from django.db import connection
-from django.contrib.auth.mixins import LoginRequiredMixin
-
-
-# Create your views here.
-# proj_expense_home_page view
 
 def  exp_home_page(request):
     return render(request,'proj_expense/Home_page.html')
 
-# def  exp_home_page(request):
-#     return render(request,'DJtimesheet/blank_page.html')
+
+class ShowAll_projexpense(View):
+    template_name='proj_expense/Show_all.html'
+    def get(self,request, *args, **kwargs):
+        expense=proj_expense.proj_exp.all()
+        return render(request,self.template_name,{"all_expense":expense})
+
+
+def new_projexpense(request):
+    form=create_projexp_form()
+    if request.method=='POST':
+        form=create_projexp_form(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/expense/show_all/')
+
+    context={'form':form}
+    return render(request,'proj_expense/new_projexpense.html',context)
+
+def edit_projexpense(request,pk):
+    expense=proj_expense.proj_exp.get(ExpenseCodeID=pk)
+    form=create_projexp_form(instance=expense)
+    if request.method=='POST':
+        form=create_projexp_form(request.POST,instance=expense)
+        if form.is_valid():
+            form.save()
+            return redirect('/expense/show_all/')
+    context={'form':form}
+    return render(request,'proj_expense/new_projexpense.html',context)

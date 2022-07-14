@@ -1,0 +1,164 @@
+{% load static%}
+<div class="logo-details">
+    <i class='bx bxl-c-plus-plus'></i>
+    <span class="logo_name">Timesheet</span>
+  </div>
+  <ul class="nav-links">
+              <li>
+                      <a href="#">
+                      <i class='bx bx-home' ></i>
+                      <span class="link_name">Admin Setting</span>
+                      </a>
+                      <ul class="sub-menu blank">
+                      <li><a class="link_name" href="#">Admin Setting</a></li>
+                      </ul>
+              </li>
+    <li>
+            <li>
+              <div class="iocn-link">
+              <a href="#">
+              <i class='bx bx-user' ></i>
+              <span class="link_name">Labor</span>
+              </a>
+              <i class='bx bxs-chevron-down arrow' ></i>
+              </div>
+              <ul class="sub-menu">
+              <li><a class="link_name" href="#">Labor Code Maintenance</a></li>
+              <li><a href="#">Create New</a></li>
+              <li><a href="#">Modify Existing</a></li>
+              <li><a href="#">Find more</a></li>
+              </ul>
+              </li>
+       <li>
+              <div class="iocn-link">
+              <a href="#">
+              <i class='bx bx-buildings' ></i>
+              <span class="link_name">Supplier </span>
+              </a>
+              <i class='bx bxs-chevron-down arrow' ></i>
+              </div>
+              <ul class="sub-menu">
+              <li><a class="link_name" href="#">Supplier Code Maintenance</a></li>
+              <li><a href="#">Create New</a></li>
+              <li><a href="#">Modify Existing</a></li>
+              <li><a href="#">Find more</a></li>
+              </ul>
+      </li>
+            <li>
+                      <div class="iocn-link">
+                      <a href="#">
+                      <i class='fas fa-gears' ></i>
+                      <span class="link_name">Equipment</span>
+                      </a>
+                      <i class='bx bxs-chevron-down arrow' ></i>
+                      </div>
+                      <ul class="sub-menu">
+                      <li><a class="link_name" href="#">Equipment Code Maintenance</a></li>
+                      <li><a href="#">Create New</a></li>
+                      <li><a href="#">Modify Existing</a></li>
+                      <li><a href="#">Find more</a></li>
+                      </ul>
+              </li>
+              <li>
+                      <div class="iocn-link">
+                      <a href="#">
+                      <i class='bx bx-layer' ></i>
+                      <span class="link_name">Expense</span>
+                      </a>
+                      <i class='bx bxs-chevron-down arrow' ></i>
+                      </div>
+                      <ul class="sub-menu">
+                      <li><a class="link_name" href="#">Project Expense Code Maintenance</a></li>
+                      <li><a href="{% url 'create_new_projexp' %}">Create New</a></li>
+                      <li><a href="#">Modify Existing</a></li>
+                      <li><a href="#">Find more</a></li>
+                      </ul>
+              </li>
+              <li>
+                      <div class="iocn-link">
+                      <a href="#">
+                      <i class='bx bx-group' ></i>
+                      <span class="link_name">User Maintenance</span>
+                      </a>
+                      <i class='bx bxs-chevron-down arrow' ></i>
+                      </div>
+                      <ul class="sub-menu">
+                      <li><a class="link_name" href="#">User Maintenance</a></li>
+                      <li><a href="#">Create New</a></li>
+                      <li><a href="#">Modify Existing</a></li>
+                      <li><a href="#">Find more</a></li>
+                      </ul>
+              </li>
+              <li>
+                      <div class="iocn-link">
+                      <a href="#">
+                      <i class='bx bx-calendar' ></i>
+                      <span class="link_name">Project Maintenance</span>
+                      </a>
+                      <i class='bx bxs-chevron-down arrow' ></i>
+                      </div>
+                      <ul class="sub-menu">
+                      <li><a class="link_name" href="#">Project Maintenance</a></li>
+                      <li><a href="#">Create New</a></li>
+                      <li><a href="#">Modify Existing</a></li>
+                      <li><a href="#">Find more</a></li>
+                      </ul>
+              </li>
+              <li>
+                      <div class="iocn-link">
+                      <a href="#">
+                      <i class='bx bx-copy' ></i>
+                      <span class="link_name">Sub-Contractors</span>
+                      </a>
+                      <i class='bx bxs-chevron-down arrow' ></i>
+                      </div>
+                      <ul class="sub-menu">
+                      <li><a class="link_name" href="#">Sub-Contractors Settings</a></li>
+                      <li><a href="#">Create New</a></li>
+                      <li><a href="#">Modify Existing</a></li>
+                      <li><a href="#">Find more</a></li>
+                      </ul>
+              </li>
+              <li>
+                      <div class="iocn-link">
+                      <a href="#">
+                      <i class='bx bx-purchase-tag' ></i>
+                      <span class="link_name">Contract Rate</span>
+                      </a>
+                      <i class='bx bxs-chevron-down arrow' ></i>
+                      </div>
+                      <ul class="sub-menu">
+                      <li><a class="link_name" href="#">Contract Rate Settings</a></li>
+                      <li><a href="#">Create New</a></li>
+                      <li><a href="#">Show all contract rates list</a></li>
+                      <li><a href="#">Show details</a></li>
+                      <li><a href="#">Make adjustment</a></li>
+                      </ul>
+              </li>
+              <li>
+                      <div class="iocn-link">
+                      <a href="#">
+                      <i class='bx bx-alarm' ></i>
+                      <span class="link_name">Time Card</span>
+                      </a>
+                      <i class='bx bxs-chevron-down arrow' ></i>
+                      </div>
+                      <ul class="sub-menu">
+                      <li><a class="link_name" href="#">Time Card Approval</a></li>
+                      <li><a href="#">Create New</a></li>
+                      <li><a href="#">Modify Existing</a></li>
+                      <li><a href="#">Find more</a></li>
+                      </ul>
+              </li>
+
+    <li>
+      <a href="#">
+        <i class='bx bx-cog' ></i>
+        <span class="link_name">Setting</span>
+      </a>
+      <ul class="sub-menu blank">
+        <li><a class="link_name" href="#">Setting</a></li>
+      </ul>
+    </li>
+
+</ul>

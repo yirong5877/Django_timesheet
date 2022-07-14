@@ -1,0 +1,40 @@
+{% extends 'DJtimesheet/base_for_sideNavigation.html' %} 
+{% block title %}
+
+Project Expense Code Maintenance 
+
+{% endblock title%}
+
+{% load crispy_forms_tags %} 
+{% block content %} 
+ <!-- Add new -->
+<div class="container">
+        <a class="btn btn-outline-primary" style="float: right;" href="{% url 'create_new_projexp' %}" ><i class="fa fa-plus-square"></i> Add New</a>
+</div>
+ <!-- Table content -->
+<div class="container mx-3 my-5">
+        <table class="table table-striped table-hover" id="show_all_proj_expense">
+                <thead>
+                        <tr>
+                                <th>Project Expense Class</th>
+                                <th>Billing Codes</th>
+                                <th>Default Rates/Hr</th>
+                                <th>Active</th>
+                                <th> Edit</th>
+                                <th> Deactive</th>
+                         </tr>
+                </thead>
+                {% for i in all_expense%}
+                <tr>
+                        <td>{{i.ExpDescription}}</td>
+                        <td>{{i.ExpBillingCode}}</td>
+                        <td>{{i.ExDefaultRates}}</td>
+                        <td>{{i.ExpActive}}</td>
+                        <td><a href="{% url 'edit_exist_projexp' i.ExpenseCodeID%}">Edit</a></td>
+                        <td><a href="#">Deactive</a></td>
+                </tr>
+                {%endfor%}
+                
+        </table>
+</div>
+{%endblock%}

@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-
+   
 class proj_expense(models.Model):
     class Meta:
         db_table = 'proj_expense'
@@ -13,10 +13,12 @@ class proj_expense(models.Model):
     (Active,'Acactive')
     )      
     
-    expense_code = models.CharField(max_length=100, blank=False,verbose_name = "Project Expense Class")
-    billing_code=models.CharField(max_length=20, blank=False,verbose_name = "Billing Codes")
-    hourrate= models.IntegerField(default=0)
-    Active =models.BooleanField(default=True,choices=Status)
+    ExpenseCodeID=models.AutoField(primary_key = True)
+    ExpDescription = models.CharField(max_length=100, blank=False,verbose_name = "Project Expense Class")
+    ExpBillingCode=models.CharField(max_length=20, blank=False,verbose_name = "Billing Codes")
+    ExDefaultRates= models.IntegerField(default=0, blank=True,null=True)
+    ExpActive =models.BooleanField(default=True,choices=Status)
+    LastUpdatedBy=models.IntegerField(null=True,blank=True)#mark for update
     proj_exp = models.Manager()
     @property
     def dollar_hourrate(self):
