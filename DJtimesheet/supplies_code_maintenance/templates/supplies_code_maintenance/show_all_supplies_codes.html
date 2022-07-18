@@ -2,21 +2,21 @@
 {% load static %}
 
 {% block title %}
-    Equipment Code Maintenance
+    Supplies Code Maintenance
 {% endblock title %}
 
 {% load crispy_forms_tags %}
 {% block content %}
  <!-- Add new -->
 <div class="container">
-        <a class="btn btn-outline-primary" style="float: right;" href="{% url 'create_new_equipment_code' %}" ><i class="fa fa-plus-square"></i> Add New</a>
+        <a class="btn btn-outline-primary" style="float: right;" href="{% url 'create_new_supplies_code' %}" ><i class="fa fa-plus-square"></i> Add New</a>
 </div>
  <!-- Table content -->
 <div class="container mx-3 my-5">
-        <table class="table table-striped table-hover" id="show_all_equipment_codes">
+        <table class="table table-striped table-hover" id="show_all_supplies_codes">
                 <thead>
                         <tr>
-                                <th>Equipment Code Class</th>
+                                <th>Supplies Code Class</th>
                                 <th>Billing Codes</th>
                                 <th>Default Rates/Hr.</th>
                                 <th>Active</th>
@@ -24,13 +24,13 @@
                                 <th> Deactive</th>
                          </tr>
                 </thead>
-                {% for i in all_equipment_codes%}
+                {% for i in all_supplies_codes%}
                 <tr>
-                        <td>{{i.ECDescription}}</td>
-                        <td>{{i.ECBillingCode}}</td>
-                        <td>{{i.ECDefaultRates}}</td>
-                        <td>{{i.ECActive}}</td>
-                        <td><a href="{% url 'adjust_existing_equipment_code' i.EquipmentCodeID%}">Edit</a></td>
+                        <td>{{i.SCDescription}}</td>
+                        <td>{{i.SCBillingCode}}</td>
+                        <td>{{i.SCDefaultRates}}</td>
+                        <td>{{i.SCActive}}</td>
+                        <td><a href="{% url 'adjust_existing_supplies_code' i.SuppliesCodeID%}">Edit</a></td>
                         <td><a href="#">Deactive</a></td>
                 </tr>
                 {%endfor%}

@@ -1,8 +1,9 @@
-{% extends 'DJtimesheet/base.html' %}
+{% extends 'DJtimesheet/base_for_sideNavigation.html' %}
+{% load static %}
 
-{% block Title %}
-    <title>Equipment Code Maintenance</title>
-{% endblock Title %}
+{% block title %}
+    Create a New Equipment Code
+{% endblock title %}
 
 
 {% load crispy_forms_tags %}
@@ -12,7 +13,7 @@
             {% csrf_token %}
             <div class="container-fluid">
             <fieldset class="form-group">
-                <legend class="Text">Create a New Equipment Code</legend>
+<!--                <legend class="Text">Create a New Equipment Code</legend>-->
                 {{ form|crispy }}
             </fieldset>
             <div class="form-group">

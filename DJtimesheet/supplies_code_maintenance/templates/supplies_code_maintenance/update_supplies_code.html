@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-    Edit Equipment Code
+    Edit Supplies Code
 {% endblock title %}
 
 {% load crispy_forms_tags %}
@@ -12,7 +12,7 @@
             {% csrf_token %}
             <div class="container-fluid">
             <fieldset class="form-group">
-<!--                <legend class="Text">Make Adjustments in the Existing Equipment Code</legend>-->
+<!--                <legend class="Text">Make Adjustments in the Existing Supplies Code</legend>-->
                 {{ form|crispy }}
             </fieldset>
             <div class="form-group">

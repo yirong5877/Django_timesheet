@@ -25,4 +25,5 @@ urlpatterns = [
     path("expense/",include('proj_expense.urls')),
     path("supplies/", include('supplies_code_maintenance.urls')),
     path('equipment_code_maintenance/', include('equipment_code_maintenance.urls')),
+    path('supplies_code_maintenance/', include('supplies_code_maintenance.urls')),
 ]

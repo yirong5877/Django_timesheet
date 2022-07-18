@@ -1,14 +1,16 @@
 from django.contrib import admin
-from .models import EquipmentCode
+from .models import EquipmentCodeMaintenance
 
 # Register your models here.
 
+admin.site.site_header = "Disaster Recovery Application Administration"
 
-@admin.register(EquipmentCode)
-class EquipmentCodeAdmin(admin.ModelAdmin):
-    fields = ['equipment_code_class', 'billing_code', 'hourly_rate', 'active']
-    ordering = ['equipment_code_class']
-    search_fields = ['equipment_code_class', 'billing_code', 'hourly_rate', 'active']
-    exclude = ['active']
-    list_display = ('equipment_code_class', 'billing_code', 'hourly_rate', 'active') # override list_display to show the list of columns
-    list_filter = ('equipment_code_class', 'active')
+
+@admin.register(EquipmentCodeMaintenance)
+class EquipmentCodeMaintenanceAdmin(admin.ModelAdmin):
+    fields = ['ECDescription', 'ECBillingCode', 'ECDefaultRates', 'ECActive']
+    ordering = ['ECDescription']
+    search_fields = ['ECDescription', 'ECBillingCode', 'ECDefaultRates', 'ECActive']
+    exclude = ['ECActive']
+    list_display = ('ECDescription', 'ECBillingCode', 'ECDefaultRates', 'ECActive') # override list_display to show the list of columns
+    list_filter = ('ECDescription', 'ECActive')
