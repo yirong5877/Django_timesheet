@@ -3,9 +3,9 @@ from . import views
 
 
 urlpatterns = [
-    path('', views.ShowAllEquipmentCode.as_view(), name='show_all_equipment_codes'),
-    path('list_all_equipment_codes/', views.EquipmentCodeListView.as_view(), name='list_all_equipment_codes'),
-    path('create_new_equipment_code/', views.EquipmentCodeCreateView.as_view(), name='create_new_equipment_code'),
-    path('adjust_existing_equipment_code/<int:pk>/', views.EquipmentCodeUpdateView.as_view(),
+    path('home/', views.ShowAllEquipmentCode.as_view(), name='show_all_equipment_codes'),
+    path('', views.EquipmentCodeListView.as_view(), name='equipment_codes_home_page'),
+    path('create_new_equipment_code/', views.new_equipment_code, name='create_new_equipment_code'),
+    path('adjust_equipment_code/<int:pk>/', views.edit_equipment_code,
          name='adjust_existing_equipment_code'),
 ]

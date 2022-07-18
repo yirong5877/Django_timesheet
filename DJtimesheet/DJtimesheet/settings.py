@@ -16,6 +16,8 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "DJtimesheet/static")]
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/dev/howto/deployment/checklist/
@@ -139,7 +141,6 @@ USE_TZ = True
 STATIC_URL = "/static/"
 MEDIA_URL = "/images/"
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/dev/ref/settings/#default-auto-field
