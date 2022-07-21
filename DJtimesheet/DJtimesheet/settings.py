@@ -35,15 +35,22 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "proj_expense.apps.ProjExpenseConfig",
+    #"proj_expense.apps.ProjExpenseConfig",
+    "labor_code.apps.LaborCodeConfig",
+    "user_admin.apps.UserAdminConfig",
     "crispy_forms",
-    "supplies_code_maintenance.apps.SuppliesCodeMaintenanceConfig",
-    'equipment_code_maintenance.apps.EquipmentCodeMaintenanceConfig',
-    'project_maintenance.apps.ProjectMaintenanceConfig',
-    'SubContractor.apps.SubcontractorConfig',
+    #"supplies_code_maintenance.apps.SuppliesCodeMaintenanceConfig",
+    #'equipment_code_maintenance.apps.EquipmentCodeMaintenanceConfig',
+    #'project_maintenance.apps.ProjectMaintenanceConfig',
+    #'SubContractor.apps.SubcontractorConfig',
 ]
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+#tell Django we're going to use a custom model for our users.
+#AUTH_USER_MODEL = 'users.CustomUser'
+#AUTHENTICATION_BACKENDS = ['users.backends.EmailBackend'] # new
+
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -81,8 +88,14 @@ WSGI_APPLICATION = "DJtimesheet.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        # "ENGINE": "django.db.backends.sqlite3",
+        # "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "azuremysqldjangotimesheet",
+        "USER": "mimimzhou",
+        "PASSWORD": "mimimzhou@gmail.com",
+        "HOST": "azremotemysqltest.mysql.database.azure.com",
+        "PORT": "3306",
     }
 }
 
@@ -124,23 +137,13 @@ USE_TZ = True
 STATIC_URL = "/static/"
 MEDIA_URL = "/images/"
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "DJtimesheet/static")]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/dev/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+LOGIN_URL = 'useradmin_login'
