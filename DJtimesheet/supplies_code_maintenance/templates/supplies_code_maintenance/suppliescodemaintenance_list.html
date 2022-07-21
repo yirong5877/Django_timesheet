@@ -1,0 +1,32 @@
+{% extends 'DJtimesheet/base_for_sideNavigation.html' %}
+{% load static %}
+
+{% block title %}
+    Supplies Code Maintenance - Default List View
+{% endblock title %}
+
+{% block content %}
+
+<form method="post">
+  {% csrf_token %}
+  <br>
+    {% for code in object_list %}
+    <div></div>
+        <H2>{{ code.SCDescription }}</H2>
+        {%if code.SCActive == 'Y'%}
+        Active
+        {%elif code.SCActive == 'N' %}
+        Deactivated
+        {% endif %}
+    {% endfor%}
+
+</form>
+
+{% endblock content %}
+
+
+
+
+
+
+

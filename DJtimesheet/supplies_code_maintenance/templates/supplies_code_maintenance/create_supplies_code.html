@@ -1,0 +1,25 @@
+{% extends 'DJtimesheet/base_for_sideNavigation.html' %}
+{% load static %}
+
+{% block title %}
+    Create a New Supplies Code
+{% endblock title %}
+
+
+{% load crispy_forms_tags %}
+{% block content %}
+    <div>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="container-fluid">
+            <fieldset class="form-group">
+<!--                <legend class="Text">Create a New Supplies Code</legend>-->
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                    <button class="btn btn-outline-info" type="submit">Create</button>
+            </div>
+            </div>
+        </form>
+    </div>
+{% endblock content %}

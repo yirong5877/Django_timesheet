@@ -1,0 +1,32 @@
+{% extends 'DJtimesheet/base_for_sideNavigation.html' %}
+{% load static %}
+
+{% block title %}
+<<<<<<<< HEAD:DJtimesheet/supplies_code_maintenance/templates/supplies_code_maintenance/suppliescodemaintenance_form.html
+    Supplies Code Maintenance
+========
+    Equipment Code Maintenance
+>>>>>>>> 0bb13ef5823b4f0620e5faeced6d7e1629cb7032:DJtimesheet/equipment_code_maintenance/templates/equipment_code_maintenance/equipmentcodemaintenance_form.html
+{% endblock title %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+    <div>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="container-fluid">
+            <fieldset class="form-group">
+<<<<<<<< HEAD:DJtimesheet/supplies_code_maintenance/templates/supplies_code_maintenance/suppliescodemaintenance_form.html
+<!--                <legend class="Text">Supplies Code Maintenance</legend>-->
+========
+<!--                <legend class="Text">Equipment Code Maintenance</legend>-->
+>>>>>>>> 0bb13ef5823b4f0620e5faeced6d7e1629cb7032:DJtimesheet/equipment_code_maintenance/templates/equipment_code_maintenance/equipmentcodemaintenance_form.html
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                    <button class="btn btn-outline-info" type="submit">Submit</button>
+            </div>
+            </div>
+        </form>
+    </div>
+{% endblock content %}
