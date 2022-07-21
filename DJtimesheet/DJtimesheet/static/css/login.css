@@ -1,0 +1,22 @@
+/* style for login html */
+.container {
+    height: 800px;
+    position: relative;
+    
+
+  }
+  
+  .card {
+    margin: 0;
+
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  .img{
+    height:400px;
+
+  }
+  .card-body{
+    background-color: #f4f5f7;
+  }

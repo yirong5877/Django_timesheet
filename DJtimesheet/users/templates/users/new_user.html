@@ -1,0 +1,14 @@
+{% extends 'DJtimesheet/base_for_sideNavigation.html' %} 
+{% load static %}
+ <!-- Title of Page -->
+ {% block title %}
+ Create New User
+ {% endblock title%}
+  <!-- Content -->
+ {%block content%}
+ <form action="{% url 'create_new_user' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" id="submit">Create New User</button>
+  </form>
+ {%endblock content%}

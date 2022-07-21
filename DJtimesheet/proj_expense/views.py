@@ -1,12 +1,9 @@
 from django.shortcuts import render,redirect
+
 from django.views import View
 from .forms import create_projexp_form
 from .models import *
 # Create your views here.
-
-def  exp_home_page(request):
-    return render(request,'proj_expense/Home_page.html')
-
 
 class ShowAll_projexpense(View):
     template_name='proj_expense/Show_all.html'
@@ -22,9 +19,10 @@ def new_projexpense(request):
         if form.is_valid():
             form.save()
             return redirect('/expense/show_all/')
-
+        
     context={'form':form}
     return render(request,'proj_expense/new_projexpense.html',context)
+
 
 def edit_projexpense(request,pk):
     expense=proj_expense.proj_exp.get(ExpenseCodeID=pk)
@@ -36,3 +34,4 @@ def edit_projexpense(request,pk):
             return redirect('/expense/show_all/')
     context={'form':form}
     return render(request,'proj_expense/new_projexpense.html',context)
+

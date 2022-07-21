@@ -68,7 +68,7 @@
                       <i class='bx bxs-chevron-down arrow' ></i>
                       </div>
                       <ul class="sub-menu">
-                      <li><a class="link_name" href="#">Project Expense Code Maintenance</a></li>
+                      <li><a class="link_name" href="{% url 'show_all_expense' %}">Project Expense Code Maintenance</a></li>
                       <li><a href="{% url 'create_new_projexp' %}">Create New</a></li>
                       <li><a href="#">Modify Existing</a></li>
                       <li><a href="#">Find more</a></li>
@@ -78,12 +78,12 @@
                       <div class="iocn-link">
                       <a href="#">
                       <i class='bx bx-group' ></i>
-                      <span class="link_name">User Maintenance</span>
+                      <span class="link_name" >User Maintenance</span>
                       </a>
                       <i class='bx bxs-chevron-down arrow' ></i>
                       </div>
                       <ul class="sub-menu">
-                      <li><a class="link_name" href="#">User Maintenance</a></li>
+                      <li><a class="link_name" href="{% url 'show_all_users' %}">User Maintenance</a></li>
                       <li><a href="#">Create New</a></li>
                       <li><a href="#">Modify Existing</a></li>
                       <li><a href="#">Find more</a></li>
@@ -160,5 +160,18 @@
         <li><a class="link_name" href="#">Setting</a></li>
       </ul>
     </li>
+
+    <li>
+          <div class="profile-details">
+            <div class="user_name">Kathleen</div>
+          </div>
+          <a href="#">
+          <i class='bx bx-log-out' ></i>
+          <span class="link_name">Logout</span>
+        </a>
+        <ul class="sub-menu blank">
+                <li><a class="link_name" href="{% url 'xiao_login' %}">Logout</a></li>
+              </ul>
+      </li>
 
 </ul>

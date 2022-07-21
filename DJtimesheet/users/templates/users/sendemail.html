@@ -1,0 +1,63 @@
+{% extends 'DJtimesheet/base_for_login.html' %} 
+{% load static %}
+ <!-- Title of Page -->
+ {% block title %}
+<title>Send Email</title>
+ {% endblock title%}
+  <!-- Content -->
+{% block content%}
+<!---------------Section for message---------------------------------------->
+
+<!---------------Section for login---------------------------------------->
+<section class="login">
+        <div class="container">
+
+        <div class="card mb-6 border-0" >
+          <div class="row g-0">
+            <div class="col-md-6" style="height:400px;">
+              <img
+                src="{% static 'images/backyard.png' %}"
+                alt="Trendy Pants and Shoes"
+                class="img w-100 h-100 rounded-start"
+              />
+            </div>
+            <div class="col-md-4">
+              <div class="card-body w-100 h-100">
+                <h4 class="card-title mb-4">Forgot Password</h4>
+
+                <form method="post" action="" class="mb-2">
+                {% csrf_token %}
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend"></div>
+                    <span class="input-group-text">
+                      <i class="fa fa-envelope fa-2x fa-fw" aria-hidden="true"></i>
+                    </span>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email" Required> 
+                  </div>
+                  
+         
+                  <button type="submit" class="btn btn-primary  my-3 w-100">Send Email</button>
+              </form>
+              <div class="options">
+
+         
+
+              {% for message in messages %}
+              <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                  <strong>Message:</strong> {{ message }}
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              </button>
+              </div>
+              {% endfor %} 
+      
+               
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </section>
+
+      
+      {%endblock content%}

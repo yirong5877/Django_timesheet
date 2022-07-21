@@ -1,0 +1,46 @@
+{% extends 'DJtimesheet/base_for_sideNavigation.html' %} 
+{% block title %}
+
+User Maintenance
+
+{% endblock title%}
+
+{% load crispy_forms_tags %} 
+{% block content %} 
+ <!-- Add new -->
+<div class="container">
+        <a class="btn btn-outline-primary" style="float: right;" href="{% url 'create_new_user' %}" ><i class="fa fa-plus-square"></i> Add New</a>
+</div>
+ <!-- Table content -->
+<div class="container mx-3 my-5">
+        <table class="table table-striped table-hover" id="show_all_users">
+                <thead>
+                        <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Company</th>
+                                <th>User Role</th>
+                                <th>Active</th>
+                                <th> Edit</th>
+                                <th> Deactive</th>
+                         </tr>
+                </thead>
+                {% for i in all_user%}
+                <tr>
+                        <td>{{i.username}}</td>
+                        <td>{{i.EmailAddress}}</td>
+                        <td>{{i.Company}}</td>
+                        <td>{{i.Userrole}}</td>
+                        <td>{{i.is_active}}</td>
+                        <td><a href="#">Edit</a></td>
+                        {% if i.is_active is True%}
+                        <td><a href="#">Deactive</a></td>
+                        {%else%}
+                        <td></td>
+                        {% endif %}
+                </tr>
+                {%endfor%}
+                
+        </table>
+</div>
+{%endblock%}

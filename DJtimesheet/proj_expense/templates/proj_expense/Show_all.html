@@ -28,10 +28,15 @@ Project Expense Code Maintenance
                 <tr>
                         <td>{{i.ExpDescription}}</td>
                         <td>{{i.ExpBillingCode}}</td>
-                        <td>{{i.ExDefaultRates}}</td>
-                        <td>{{i.ExpActive}}</td>
+                        <td>{{i.dollar_hourrate}}</td>
+                        <td>{{i.Active_status}}</td>
                         <td><a href="{% url 'edit_exist_projexp' i.ExpenseCodeID%}">Edit</a></td>
+                        {% if i.ExpActive is True%}
                         <td><a href="#">Deactive</a></td>
+                        {%else%}
+                        <td></td>
+                        {% endif %}
+
                 </tr>
                 {%endfor%}
                 

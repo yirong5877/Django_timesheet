@@ -204,6 +204,28 @@
   .sidebar.close{
     width: 0;
   }
+  .sidebar .profile-details{
+    position: fixed;
+    bottom: 0;
+    width: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #1d1b31;
+    padding: 12px 0;
+    transition: all 0.5s ease;
+  }
+  .sidebar .profile-details .user_name{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .sidebar.close .profile-details i,
+  .sidebar.close .profile-details .user_name{
+    display: none;
+  }
+
   .home-section{
     left: 78px;
     width: calc(100% - 78px);
