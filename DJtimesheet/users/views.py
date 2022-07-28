@@ -48,7 +48,8 @@ def signout(request):
 def send_email(request):
     if request.method=="POST":
         email=request.POST['email']
-        if User.objects.filter(email=email).exists():
+        # if User.objects.filter(email=email).exists():
+        if CustomUser.cus_user.filter(EmailAddress=email).exists():
              # Forgot password resend by Email
             subject="Timesheet Application Reset your password"
             message="To initiate the password reset process for your Account xxx@xxx  you ask for reset password"
@@ -68,3 +69,7 @@ class ShowAll_users(View):
 
 
 
+# from django.contrib.auth.models import User
+# user = CustomUser.cus_user.create_user(
+#                                 email='jlennon@beatles.com',
+#                                 password='glass onion')
