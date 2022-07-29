@@ -19,12 +19,6 @@ class ShowAllEquipmentCode(View):
         return render(request, self.template_name, {'all_equipment_codes': all_equipment_codes})
 
 
-class EquipmentCodeListView(ListView):
-    model = EquipmentCodeMaintenance
-    ordering = ['ECDescription']
-    queryset = EquipmentCodeMaintenance.dj_equipment_code.all()
-
-
 class EquipmentCodeCreateView(CreateView):
     model = EquipmentCodeMaintenance
     fields = ['ECDescription', 'ECBillingCode', 'ECDefaultRates', 'ECActive']
@@ -80,3 +74,10 @@ def edit_equipment_code(request, pk):
 
     context = {'form': form}
     return render(request,'equipment_code_maintenance/update_equipment_code.html', context)
+
+
+class ChangeActiveStatusView(UpdateView):
+    model = EquipmentCodeMaintenance
+    fields = ['ECActive']
+    success_url = reverse_lazy('show_all_equipment_codes')
+    template_name = 'equipment_code_maintenance/change_active_status.html'

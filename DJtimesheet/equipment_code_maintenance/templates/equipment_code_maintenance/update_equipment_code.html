@@ -1,24 +1,20 @@
 {% extends 'DJtimesheet/base_for_sideNavigation.html' %}
 {% load static %}
-
+ <!-- Title of Page -->
 {% block title %}
-    Edit Equipment Code
-{% endblock title %}
+Update Equipment Code
+{% endblock title%}
 
-{% load crispy_forms_tags %}
-{% block content %}
-    <div>
-        <form method="POST">
-            {% csrf_token %}
-            <div class="container-fluid">
-            <fieldset class="form-group">
-<!--                <legend class="Text">Make Adjustments in the Existing Equipment Code</legend>-->
-                {{ form|crispy }}
-            </fieldset>
-            <div class="form-group">
-                    <button class="btn btn-outline-info" type="submit">Submit</button>
-            </div>
-            </div>
-        </form>
-    </div>
-{% endblock content %}
+ <!-- Content -->
+{%block content%}
+<div class="container py-5">
+<form action="#"method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <!-- <input type="submit" name="Submit"> -->
+        <button type="submit" class="btn btn-primary mx-5 my-5 float-end">
+                <i class="icon-user icon-white"></i> Submit
+              </button>
+</form>
+</div>
+{%endblock content%}

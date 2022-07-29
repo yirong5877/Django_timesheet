@@ -1,0 +1,41 @@
+{% extends 'DJtimesheet/base_for_sideNavigation.html' %}
+{% load static %}
+
+{% block title %}
+    Project Maintenance
+{% endblock title %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+ <!-- Add new -->
+<div class="container">
+        <a class="btn btn-outline-primary" style="float: right;" href="{% url 'create_new_project' %}" ><i class="fa fa-plus-square"></i> Add New</a>
+</div>
+ <!-- Table content -->
+<div class="container mx-3 my-5">
+        <table class="table table-striped table-hover" id="show_all_projects">
+                <thead>
+                        <tr>
+                                <th>Project Name</th>
+                                <th>Project Number</th>
+                                <th>Project Location</th>
+                                <th>Project Manager</th>
+                                <th>Date Created</th>
+                                <th> Edit</th>
+
+                         </tr>
+                </thead>
+                {% for i in all_projects%}
+                <tr>
+                        <td>{{i.ProjectName}}</td>
+                        <td>{{i.project_number}}</td>
+                        <td>{{i.ProjectLocation}}</td>
+                        <td>{{i.ProjectManager}}</td>
+                        <td>{{i.PJDateCreated}}</td>
+                        <td><a href="{% url 'adjust_existing_project_info' i.ProjectID%}">Edit</a></td>
+                </tr>
+                {%endfor%}
+
+        </table>
+</div>
+{%endblock%}

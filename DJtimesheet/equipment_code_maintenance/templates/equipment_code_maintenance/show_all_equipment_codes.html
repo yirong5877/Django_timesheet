@@ -28,10 +28,15 @@
                 <tr>
                         <td>{{i.ECDescription}}</td>
                         <td>{{i.ECBillingCode}}</td>
-                        <td>{{i.ECDefaultRates}}</td>
-                        <td>{{i.ECActive}}</td>
+                        <td>{{i.dollar_hourrate}}</td>
+                        <td>{{i.Active_status}}</td>
                         <td><a href="{% url 'adjust_existing_equipment_code' i.EquipmentCodeID%}">Edit</a></td>
-                        <td><a href="#">Deactive</a></td>
+                        {% if i.ECActive is True%}
+                        <td><a href="{% url 'change_active_status' i.EquipmentCodeID %}">Deactive</a></td>
+                        {%else%}
+                        <td></td>
+                        {% endif %}
+
                 </tr>
                 {%endfor%}
 

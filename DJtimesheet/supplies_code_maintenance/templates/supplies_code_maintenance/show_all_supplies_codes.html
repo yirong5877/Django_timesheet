@@ -28,10 +28,14 @@
                 <tr>
                         <td>{{i.SCDescription}}</td>
                         <td>{{i.SCBillingCode}}</td>
-                        <td>{{i.SCDefaultRates}}</td>
-                        <td>{{i.SCActive}}</td>
+                        <td>{{i.dollar_hourrate}}</td>
+                        <td>{{i.Active_status}}</td>
                         <td><a href="{% url 'adjust_existing_supplies_code' i.SuppliesCodeID%}">Edit</a></td>
-                        <td><a href="#">Deactive</a></td>
+                        {% if i.SCActive is True %}
+                        <td><a href="{% url 'change_active_status' i.SuppliesCodeID %}">Deactive</a></td>
+                        {% else %}
+                        <td></td>
+                        {% endif %}
                 </tr>
                 {%endfor%}
 

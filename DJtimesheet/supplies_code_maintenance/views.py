@@ -19,12 +19,6 @@ class ShowAllSuppliesCode(View):
         return render(request, self.template_name, {'all_supplies_codes': all_supplies_codes})
 
 
-class SuppliesCodeListView(ListView):
-    model = SuppliesCodeMaintenance
-    ordering = ['SCDescription']
-    queryset = SuppliesCodeMaintenance.dj_supplies_code.all()
-
-
 class SuppliesCodeCreateView(CreateView):
     model = SuppliesCodeMaintenance
     fields = ['SCDescription', 'SCBillingCode', 'SCDefaultRates', 'SCActive']
@@ -80,3 +74,11 @@ def edit_supplies_code(request, pk):
 
     context = {'form': form}
     return render(request, 'supplies_code_maintenance/update_supplies_code.html', context)
+
+
+class ChangeActiveStatusView(UpdateView):
+    model = SuppliesCodeMaintenance
+    fields = ['SCActive']
+    success_url = reverse_lazy('show_all_supplies_codes')
+    template_name = 'supplies_code_maintenance/change_active_status.html'
+

@@ -21,5 +21,11 @@ urlpatterns = [
     path("",include('users.urls')),
     path("admin/", admin.site.urls),
     path("expense/",include('proj_expense.urls')),
+    path("supplies/", include('supplies_code_maintenance.urls')),
+    path("labor/", include('labor_code.urls')),
+    path('equipment_code_maintenance/', include('equipment_code_maintenance.urls')),
+    path('supplies_code_maintenance/', include('supplies_code_maintenance.urls')),
+    path('project_maintenance/', include('project_maintenance.urls')),
+    path('users/', include('users.urls')),
     
 ]

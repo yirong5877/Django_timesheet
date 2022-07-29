@@ -1,17 +1,3 @@
-'''
-
-
-from django.urls import path
-from . import views
-from django.contrib.auth import views as auth_views
-
-
-urlpatterns = [
-    path('add_lc_create_view/', views.AddNewLaborCodeCreateView.as_view(),name='view_class_add_labor_code'),
-    path('update_lc_update_view/<int:pk>', views.LaborCodeUpdateView.as_view(), name='view_class_update_laobor_code'),
-
-]
-'''
 
 from django.urls import path
 from . import views
