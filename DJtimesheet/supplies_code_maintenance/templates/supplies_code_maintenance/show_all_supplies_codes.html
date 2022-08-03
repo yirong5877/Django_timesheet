@@ -31,11 +31,12 @@
                         <td>{{i.dollar_hourrate}}</td>
                         <td>{{i.Active_status}}</td>
                         <td><a href="{% url 'adjust_existing_supplies_code' i.SuppliesCodeID%}">Edit</a></td>
-                        {% if i.SCActive is True %}
+                        {% if i.SCActive is True%}
                         <td><a href="{% url 'change_active_status' i.SuppliesCodeID %}">Deactive</a></td>
-                        {% else %}
+                        {%else%}
                         <td></td>
                         {% endif %}
+
                 </tr>
                 {%endfor%}
 

@@ -17,7 +17,7 @@ class SuppliesCodeMaintenance(models.Model):
     )
 
     SuppliesCodeID = models.AutoField(primary_key=True)
-    SCDescription = models.CharField(max_length=100, blank=False, verbose_name="Supplies Code")
+    SCDescription = models.CharField(max_length=100, blank=False, verbose_name="Supplies Code Class")
     SCBillingCode = models.CharField(max_length=20, blank=False, verbose_name="Billing Codes")
     SCDefaultRates = models.IntegerField(default=0, blank=True, null=True, verbose_name="Default Hourly Rates")
     SCActive = models.BooleanField(default=True, choices=Status, verbose_name="Active Status")
